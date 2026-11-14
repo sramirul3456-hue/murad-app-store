@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>MURAD APP STORE</title>
 
 <style>
@@ -13,81 +14,227 @@
 }
 
 body {
-    background: #0b1020;
-    color: white;
     font-family: Arial, sans-serif;
+    background: #eef0f8;
+    color: #202b40;
+    padding-bottom: 100px;
 }
+
+/* HEADER */
 
 header {
-    background: #151d35;
-    padding: 25px;
+    background: white;
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: bold;
+    color: #34349a;
+}
+
+.logo span {
+    color: #00a9ed;
+}
+
+.login {
+    background: #38369c;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+/* BANNER */
+
+.banner {
+    margin: 15px 10px;
+    min-height: 170px;
+    border-radius: 12px;
+    background: linear-gradient(120deg,#082c9c,#0879df);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    padding: 25px;
 }
 
-header h1 {
-    color: #00d4ff;
-    font-size: 27px;
+.banner h2 {
+    font-size: 25px;
+    line-height: 1.5;
 }
 
-header p {
-    color: #aaa;
-    margin-top: 8px;
+.banner p {
+    margin-top: 10px;
 }
+
+/* SEARCH */
 
 .search {
-    text-align: center;
-    padding: 25px;
+    padding: 15px;
 }
 
 .search input {
-    width: 90%;
-    max-width: 450px;
-    padding: 14px;
-    border-radius: 10px;
+    width: 100%;
+    padding: 15px;
     border: none;
+    border-radius: 12px;
+    font-size: 15px;
     outline: none;
-    font-size: 16px;
+    box-shadow: 0 2px 10px #00000010;
 }
+
+/* CATEGORIES */
+
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    flex-wrap: wrap;
+}
+
+.categories button {
+    border: none;
+    background: white;
+    padding: 13px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    color: #30394c;
+    cursor: pointer;
+}
+
+.categories button.active {
+    background: #38369c;
+    color: white;
+}
+
+/* SECTION */
+
+.section-title {
+    padding: 15px;
+    font-size: 20px;
+}
+
+/* APPS GRID */
 
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    padding: 10px;
 }
 
 .app {
-    background: #151d35;
-    padding: 25px;
-    border-radius: 15px;
+    background: white;
+    padding: 12px;
+    border-radius: 17px;
     text-align: center;
-    border: 1px solid #273451;
+    box-shadow: 0 4px 15px #00000010;
+    min-width: 0;
 }
 
-.app h2 {
-    margin-bottom: 12px;
-    color: #00d4ff;
+.app h3 {
+    background: #eeeeef;
+    padding: 15px 5px;
+    border-radius: 12px;
+    font-size: 13px;
+    margin-bottom: 10px;
+    overflow-wrap: anywhere;
+}
+
+.app img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 12px;
+    background: #e5e5e5;
 }
 
 .app p {
-    color: #aaa;
-    margin-bottom: 20px;
+    color: #777;
+    font-size: 12px;
+    margin: 10px 0;
 }
 
 .download {
-    display: inline-block;
-    background: #00bfff;
-    color: #000;
-    padding: 12px 25px;
-    border-radius: 8px;
+    display: block;
+    background: #38369c;
+    color: white;
     text-decoration: none;
+    padding: 12px 5px;
+    border-radius: 10px;
     font-weight: bold;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* ADVERTISEMENT */
+
+.ad-box {
+    margin: 20px 12px;
+    padding: 20px;
+    min-height: 90px;
+    background: white;
+    border: 1px dashed #aaa;
+    border-radius: 12px;
+    text-align: center;
+    color: #999;
+}
+
+/* BOTTOM NAV */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 12px;
+    left: 5%;
+    width: 90%;
+    background: #ffffffed;
+    border-radius: 40px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 4px 20px #00000020;
+    z-index: 100;
+}
+
+.bottom-nav a {
+    text-decoration: none;
+    color: #68758a;
+    font-weight: bold;
+    text-align: center;
+    font-size: 13px;
+    padding: 8px 20px;
+}
+
+.bottom-nav a.active {
+    color: #38369c;
 }
 
 footer {
     text-align: center;
     padding: 25px;
-    color: #777;
+    color: #888;
+    font-size: 13px;
+}
+
+/* DESKTOP */
+
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1100px;
+        margin: auto;
+    }
+
+    .banner {
+        max-width: 1100px;
+        margin: 20px auto;
+    }
 }
 </style>
 </head>
@@ -95,33 +242,109 @@ footer {
 <body>
 
 <header>
-    <h1>MURAD APP STORE</h1>
-    <p>Your Favorite Apps In One Place</p>
+    <div class="logo">
+        MURAD <span>APP STORE</span>
+    </div>
+
+    <a href="#account" class="login">ACCOUNT</a>
 </header>
 
-<div class="search">
-    <input type="text" id="search"
-    placeholder="Search Apps..."
-    onkeyup="searchApps()">
+<!-- BANNER -->
+
+<div class="banner">
+    <div>
+        <h2>WELCOME TO<br>MURAD APP STORE</h2>
+        <p>Download Your Favorite Apps</p>
+    </div>
 </div>
+
+<!-- SEARCH -->
+
+<div class="search">
+    <input
+        type="text"
+        id="search"
+        placeholder="Search your favorite apps..."
+        oninput="filterApps()">
+</div>
+
+<!-- CATEGORIES -->
+
+<div class="categories">
+
+    <button class="active" onclick="setCategory('all',this)">
+        All
+    </button>
+
+    <button onclick="setCategory('nonroot',this)">
+        NON ROOT
+    </button>
+
+    <button onclick="setCategory('root',this)">
+        ROOT
+    </button>
+
+</div>
+
+<h2 class="section-title">🔥 Popular Apps</h2>
+
+<!-- APPS -->
 
 <div class="container" id="apps">
 
-    <div class="app">
-        <h2>My First App</h2>
+    <div class="app" data-category="nonroot">
+        <h3>MY FIRST APP</h3>
+
+        <img src="https://placehold.co/400x400/171717/ffffff?text=APP+1">
+
         <p>Download your favorite application.</p>
-        <a href="YOUR_DOWNLOAD_LINK"
-        class="download">DOWNLOAD</a>
+
+        <a href="https://t.me/muradpanel01/20"
+           class="download">⬇ DOWNLOAD</a>
     </div>
 
-    <div class="app">
-        <h2>My Second App</h2>
+    <div class="app" data-category="root">
+        <h3>MY SECOND APP</h3>
+
+        <img src="https://placehold.co/400x400/171717/ffffff?text=APP+2">
+
         <p>Download your favorite application.</p>
+
         <a href="YOUR_DOWNLOAD_LINK"
-        class="download">DOWNLOAD</a>
+           class="download">⬇ DOWNLOAD</a>
+    </div>
+
+    <div class="app" data-category="nonroot">
+        <h3>MY THIRD APP</h3>
+
+        <img src="https://placehold.co/400x400/171717/ffffff?text=APP+3">
+
+        <p>Download your favorite application.</p>
+
+        <a href="YOUR_DOWNLOAD_LINK"
+           class="download">⬇ DOWNLOAD</a>
+    </div>
+
+    <div class="app" data-category="root">
+        <h3>MY FOURTH APP</h3>
+
+        <img src="https://placehold.co/400x400/171717/ffffff?text=APP+4">
+
+        <p>Download your favorite application.</p>
+
+        <a href="YOUR_DOWNLOAD_LINK"
+           class="download">⬇ DOWNLOAD</a>
     </div>
 
 </div>
+
+<!-- ADVERTISEMENT -->
+
+<div class="ad-box">
+    Advertisement Space
+</div>
+
+<!-- FOOTER -->
 
 <footer>
     © 2026 MURAD APP STORE
@@ -129,18 +352,61 @@ footer {
     All Rights Reserved.
 </footer>
 
-<script>
-function searchApps() {
-    let input = document.getElementById("search").value.toLowerCase();
-    let apps = document.querySelectorAll(".app");
+<!-- BOTTOM NAVIGATION -->
 
-    apps.forEach(app => {
+<div class="bottom-nav">
+
+    <a href="#" class="active">
+        🏠<br>Home
+    </a>
+
+    <a href="#account">
+        👤<br>Account
+    </a>
+
+</div>
+
+<script>
+
+let selectedCategory = "all";
+
+function setCategory(category, button) {
+
+    selectedCategory = category;
+
+    document.querySelectorAll(".categories button")
+    .forEach(btn => btn.classList.remove("active"));
+
+    button.classList.add("active");
+
+    filterApps();
+}
+
+function filterApps() {
+
+    let search = document.getElementById("search")
+    .value.toLowerCase();
+
+    document.querySelectorAll(".app").forEach(app => {
+
+        let name = app.innerText.toLowerCase();
+
+        let category = app.dataset.category;
+
+        let matchesSearch = name.includes(search);
+
+        let matchesCategory =
+            selectedCategory === "all" ||
+            selectedCategory === category;
+
         app.style.display =
-        app.innerText.toLowerCase().includes(input)
-        ? "block" : "none";
+            matchesSearch && matchesCategory
+            ? "block" : "none";
+
     });
 }
+
 </script>
 
 </body>
-  </html>
+</html>
